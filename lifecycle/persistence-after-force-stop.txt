@@ -1,0 +1,14 @@
+== head da6e37b: persistence: am force-stop com.ni.launcher.dev, then HOME (relaunch)
+-- Pinned rows before force-stop
+0|com.android.chrome|1d634d5f-290d-4ec6-bd65-7a0ce28e2fe9|Saved Label R2
+1|dev.ni.pinhelper|r3-dedup|Dedup1
+2|dev.ni.pinhelper|r3-recreate-early|r3-recreate-early
+3|dev.ni.pinhelper|r3-recreate-late|r3-recreate-late
+-- pid after force-stop: ''
+-- pid after relaunch: 7439
+-- Pinned rows after relaunch
+0|com.android.chrome|1d634d5f-290d-4ec6-bd65-7a0ce28e2fe9|Saved Label R2
+1|dev.ni.pinhelper|r3-dedup|Dedup1
+2|dev.ni.pinhelper|r3-recreate-early|r3-recreate-early
+3|dev.ni.pinhelper|r3-recreate-late|r3-recreate-late
+-- crash buffer lines: 0

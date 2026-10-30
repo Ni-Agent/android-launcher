@@ -1,0 +1,13 @@
+== (a1) invalid request: CONFIRM_PIN_SHORTCUT without a PinItemRequest extra (am start as root)
+-- events
+10-30 14:43:56.628   522  1835 I wm_create_activity: [0,208451781,30,com.ni.launcher.dev/com.ni.launcher.PinShortcutActivity,android.content.pm.action.CONFIRM_PIN_SHORTCUT,NULL,NULL,268435456]
+10-30 14:44:14.412   522  1835 I wm_finish_activity: [0,208451781,30,com.ni.launcher.dev/com.ni.launcher.PinShortcutActivity,app-request]
+10-30 14:44:14.666  5587  5587 I wm_on_create_called: [208451781,com.ni.launcher.PinShortcutActivity,performCreate]
+10-30 14:44:20.939   522   542 I wm_destroy_activity: [0,208451781,30,com.ni.launcher.dev/com.ni.launcher.PinShortcutActivity,finish-imm:idle]
+10-30 14:44:20.993  5587  5587 I wm_on_destroy_called: [208451781,com.ni.launcher.PinShortcutActivity,performDestroy]
+-- main
+10-30 14:43:56.414   522  1835 I ActivityTaskManager: START u0 {act=android.content.pm.action.CONFIRM_PIN_SHORTCUT flg=0x10000000 cmp=com.ni.launcher.dev/com.ni.launcher.PinShortcutActivity} from uid 0
+10-30 14:44:15.024   522   542 W ActivityTaskManager: Activity top resumed state loss timeout for ActivityRecord{c6cb8c5 u0 com.ni.launcher.dev/com.ni.launcher.PinShortcutActivity t30 f}}
+10-30 14:44:15.025   522   542 W ActivityTaskManager: Activity pause timeout for ActivityRecord{c6cb8c5 u0 com.ni.launcher.dev/com.ni.launcher.PinShortcutActivity t30 f}}
+-- Pinned rows after
+0|com.android.chrome|1d634d5f-290d-4ec6-bd65-7a0ce28e2fe9|Saved Label R2

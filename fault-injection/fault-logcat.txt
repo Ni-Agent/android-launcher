@@ -1,0 +1,33 @@
+10-30 08:22:30.347   517  1789 I ActivityTaskManager: START u0 {act=android.content.pm.action.CONFIRM_PIN_SHORTCUT flg=0x10008000 cmp=com.ni.launcher.dev/com.ni.launcher.PinShortcutActivity (has extras)} from uid 1000
+10-30 08:22:32.000   517   544 I ActivityManager: Start proc 12399:com.ni.launcher.dev/u0a167 for pre-top-activity {com.ni.launcher.dev/com.ni.launcher.PinShortcutActivity}
+10-30 08:22:46.626 12399 12399 E PinShortcutActivity: Failed to save pinned shortcut com.android.chrome/dc3957bd-0fdc-4bea-af68-98b70cab1360
+10-30 08:22:46.626 12399 12399 E PinShortcutActivity: android.database.sqlite.SQLiteFullException: TEMP fault injection, not committed
+10-30 08:22:46.626 12399 12399 E PinShortcutActivity: 	at com.ni.launcher.PinShortcutActivity$onCreate$1$1$1.invokeSuspend(PinShortcutActivity.kt:43)
+10-30 08:22:46.626 12399 12399 E PinShortcutActivity: 	at com.ni.launcher.PinShortcutActivity$onCreate$1$1$1.invoke(Unknown Source:8)
+10-30 08:22:46.626 12399 12399 E PinShortcutActivity: 	at com.ni.launcher.PinShortcutActivity$onCreate$1$1$1.invoke(Unknown Source:2)
+10-30 08:22:46.626 12399 12399 E PinShortcutActivity: 	at androidx.room.RoomDatabaseKt__RoomDatabase_androidKt$withTransaction$2.invokeSuspend(RoomDatabase.android.kt:2044)
+10-30 08:22:46.626 12399 12399 E PinShortcutActivity: 	at androidx.room.RoomDatabaseKt__RoomDatabase_androidKt$withTransaction$2.invoke(Unknown Source:8)
+10-30 08:22:46.626 12399 12399 E PinShortcutActivity: 	at androidx.room.RoomDatabaseKt__RoomDatabase_androidKt$withTransaction$2.invoke(Unknown Source:2)
+10-30 08:22:46.626 12399 12399 E PinShortcutActivity: 	at androidx.room.RoomDatabaseKt__RoomDatabase_androidKt$withTransactionContext$transactionBlock$1.invokeSuspend(RoomDatabase.android.kt:2058)
+10-30 08:22:46.626 12399 12399 E PinShortcutActivity: 	at androidx.room.RoomDatabaseKt__RoomDatabase_androidKt$withTransactionContext$transactionBlock$1.invoke(Unknown Source:8)
+10-30 08:22:46.626 12399 12399 E PinShortcutActivity: 	at androidx.room.RoomDatabaseKt__RoomDatabase_androidKt$withTransactionContext$transactionBlock$1.invoke(Unknown Source:4)
+10-30 08:22:46.626 12399 12399 E PinShortcutActivity: 	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:42)
+10-30 08:22:46.626 12399 12399 E PinShortcutActivity: 	at kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:164)
+10-30 08:22:46.626 12399 12399 E PinShortcutActivity: 	at kotlinx.coroutines.BuildersKt.withContext(Unknown Source:1)
+10-30 08:22:46.626 12399 12399 E PinShortcutActivity: 	at androidx.room.RoomDatabaseKt__RoomDatabase_androidKt$startTransactionCoroutine$2$1$1.invokeSuspend(RoomDatabase.android.kt:2087)
+10-30 08:22:46.626 12399 12399 E PinShortcutActivity: 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+10-30 08:22:46.626 12399 12399 E PinShortcutActivity: 	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:101)
+10-30 08:22:46.626 12399 12399 E PinShortcutActivity: 	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:263)
+10-30 08:22:46.626 12399 12399 E PinShortcutActivity: 	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:95)
+10-30 08:22:46.626 12399 12399 E PinShortcutActivity: 	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:69)
+10-30 08:22:46.626 12399 12399 E PinShortcutActivity: 	at kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source:1)
+10-30 08:22:46.626 12399 12399 E PinShortcutActivity: 	at androidx.room.RoomDatabaseKt__RoomDatabase_androidKt$startTransactionCoroutine$2$1.run(RoomDatabase.android.kt:2084)
+10-30 08:22:46.626 12399 12399 E PinShortcutActivity: 	at androidx.room.TransactionExecutor.execute$lambda$1$lambda$0(TransactionExecutor.android.kt:38)
+10-30 08:22:46.626 12399 12399 E PinShortcutActivity: 	at androidx.room.TransactionExecutor.$r8$lambda$FZWr2PGmP3sgXLCiri-DCcePXSs(Unknown Source:0)
+10-30 08:22:46.626 12399 12399 E PinShortcutActivity: 	at androidx.room.TransactionExecutor$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+10-30 08:22:46.626 12399 12399 E PinShortcutActivity: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+10-30 08:22:46.626 12399 12399 E PinShortcutActivity: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+10-30 08:22:46.626 12399 12399 E PinShortcutActivity: 	at java.lang.Thread.run(Thread.java:923)
+10-30 08:22:50.538   517  1782 W NotificationService: Toast already killed. pkg=com.ni.launcher.dev token=android.os.BinderProxy@6b942da
+10-30 08:22:51.931   517   542 D ArtManagerInternalImpl: /data/misc/iorapd/com.ni.launcher.dev/1/com.ni.launcher.PinShortcutActivity/compiled_traces/compiled_trace.pb doesn't exist
+10-30 08:22:52.818   517   542 I ActivityTaskManager: Displayed com.ni.launcher.dev/com.ni.launcher.PinShortcutActivity: +16s170ms

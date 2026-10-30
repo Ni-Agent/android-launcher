@@ -1,0 +1,17 @@
+== head da6e37b: (b) fresh request #2 for helper shortcut id=r3-dedup
+Starting: Intent { cmp=dev.ni.pinhelper/.PinActivity (has extras) }
+-- events
+10-30 14:52:33.602   522  2150 I wm_create_activity: [0,96965818,46,com.ni.launcher.dev/com.ni.launcher.PinShortcutActivity,android.content.pm.action.CONFIRM_PIN_SHORTCUT,NULL,NULL,268468224]
+10-30 14:52:34.278  7129  7129 I wm_on_create_called: [96965818,com.ni.launcher.PinShortcutActivity,performCreate]
+10-30 14:52:34.516  7129  7129 I wm_on_resume_called: [96965818,com.ni.launcher.PinShortcutActivity,RESUME_ACTIVITY]
+10-30 14:52:34.605   522  2556 I wm_finish_activity: [0,96965818,46,com.ni.launcher.dev/com.ni.launcher.PinShortcutActivity,app-request]
+10-30 14:52:35.108   522   542 I wm_destroy_activity: [0,96965818,46,com.ni.launcher.dev/com.ni.launcher.PinShortcutActivity,finish-imm:idle]
+10-30 14:52:35.357  7129  7129 I wm_on_destroy_called: [96965818,com.ni.launcher.PinShortcutActivity,performDestroy]
+-- main
+10-30 14:52:33.489   522  2150 I ActivityTaskManager: START u0 {act=android.content.pm.action.CONFIRM_PIN_SHORTCUT flg=0x10008000 cmp=com.ni.launcher.dev/com.ni.launcher.PinShortcutActivity (has extras)} from uid 1000
+10-30 14:52:33.707  6210  6210 I PinHelper: requestPinShortcut id=r3-dedup label=Dedup2 returned true
+-- PinShortcutActivity records left:
+0
+-- Pinned rows after
+0|com.android.chrome|1d634d5f-290d-4ec6-bd65-7a0ce28e2fe9|Saved Label R2
+1|dev.ni.pinhelper|r3-dedup|Dedup1

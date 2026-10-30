@@ -1,0 +1,12 @@
+diff --git a/app/src/main/java/com/ni/launcher/PinShortcutActivity.kt b/app/src/main/java/com/ni/launcher/PinShortcutActivity.kt
+index f29e054..a7ad139 100644
+--- a/app/src/main/java/com/ni/launcher/PinShortcutActivity.kt
++++ b/app/src/main/java/com/ni/launcher/PinShortcutActivity.kt
+@@ -40,6 +40,7 @@ class PinShortcutActivity : ComponentActivity() {
+                     if (!request.accept()) return@withContext
+                     // Allocate the order and insert atomically, even for concurrent pin requests.
+                     db.withTransaction {
++                        if (shortcut.id.isNotEmpty()) throw android.database.sqlite.SQLiteFullException("TEMP fault injection, not committed")
+                         db.tagDao().insert(TagEntity(PINNED, "Pinned"))
+                         tagItemDao.insert(
+                             TagItemEntity(

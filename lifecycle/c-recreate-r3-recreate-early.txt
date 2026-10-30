@@ -1,0 +1,29 @@
+== head da6e37b: (c) recreation during pinning: request id=r3-recreate-early, then 'cmd uimode night yes' after 1s
+Starting: Intent { cmp=dev.ni.pinhelper/.PinActivity (has extras) }
+Night mode: yes
+-- events
+10-30 14:53:39.320   522   581 I wm_create_activity: [0,205263163,48,com.ni.launcher.dev/com.ni.launcher.PinShortcutActivity,android.content.pm.action.CONFIRM_PIN_SHORTCUT,NULL,NULL,268468224]
+10-30 14:53:40.159  7129  7129 I wm_on_create_called: [205263163,com.ni.launcher.PinShortcutActivity,performCreate]
+10-30 14:53:40.482  7129  7129 I wm_on_resume_called: [205263163,com.ni.launcher.PinShortcutActivity,RESUME_ACTIVITY]
+10-30 14:53:47.119   522  4823 I wm_finish_activity: [0,205263163,48,com.ni.launcher.dev/com.ni.launcher.PinShortcutActivity,app-request]
+10-30 14:53:52.962   522   542 I wm_destroy_activity: [0,205263163,48,com.ni.launcher.dev/com.ni.launcher.PinShortcutActivity,finish-imm:transit]
+10-30 14:53:55.632  7129  7129 I wm_on_destroy_called: [205263163,com.ni.launcher.PinShortcutActivity,performDestroy]
+10-30 14:53:55.880  7129  7129 I wm_on_create_called: [205263163,com.ni.launcher.PinShortcutActivity,performCreate]
+10-30 14:53:58.158  7129  7129 I wm_on_destroy_called: [205263163,com.ni.launcher.PinShortcutActivity,performDestroy]
+-- config changes / relaunches
+10-30 14:53:41.293   522   581 I configuration_changed: 512
+10-30 14:53:42.643   522   581 I wm_relaunch_resume_activity: [0,205263163,48,com.ni.launcher.dev/com.ni.launcher.PinShortcutActivity]
+10-30 14:53:47.701   522   542 I wm_relaunch_resume_activity: [0,74755629,41,com.ni.launcher.dev/com.ni.launcher.MainActivity]
+-- main
+10-30 14:53:39.292   522   581 I ActivityTaskManager: START u0 {act=android.content.pm.action.CONFIRM_PIN_SHORTCUT flg=0x10008000 cmp=com.ni.launcher.dev/com.ni.launcher.PinShortcutActivity (has extras)} from uid 1000
+10-30 14:53:39.371  6210  6210 I PinHelper: requestPinShortcut id=r3-recreate-early label=r3-recreate-early returned true
+10-30 14:53:44.648   522   542 W WindowManager: Force clearing freeze: ActivityRecord{c3c113b u0 com.ni.launcher.dev/com.ni.launcher.PinShortcutActivity t48}
+10-30 14:53:47.667   522   542 W ActivityTaskManager: Activity top resumed state loss timeout for ActivityRecord{c3c113b u0 com.ni.launcher.dev/com.ni.launcher.PinShortcutActivity t48 f}}
+10-30 14:53:47.668   522   542 W ActivityTaskManager: Activity pause timeout for ActivityRecord{c3c113b u0 com.ni.launcher.dev/com.ni.launcher.PinShortcutActivity t48 f}}
+10-30 14:53:55.876   522  1592 W ActivityTaskManager: Duplicate finish request for r=ActivityRecord{c3c113b u0 com.ni.launcher.dev/com.ni.launcher.PinShortcutActivity t48 f}}
+-- PinShortcutActivity records left:
+0
+-- Pinned rows after
+0|com.android.chrome|1d634d5f-290d-4ec6-bd65-7a0ce28e2fe9|Saved Label R2
+1|dev.ni.pinhelper|r3-dedup|Dedup1
+2|dev.ni.pinhelper|r3-recreate-early|r3-recreate-early
