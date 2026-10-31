@@ -22,7 +22,7 @@ def find(text=None, desc=None, timeout=90):
         time.sleep(2)
     raise SystemExit(f"not found: {text or desc}")
 def tap(p): sh(f"input tap {p[0]} {p[1]}")
-def longpress(p): sh(f"input swipe {p[0]} {p[1]} {p[0]} {p[1]} 1200")
+def longpress(p): sh(f"input swipe {p[0]} {p[1]} {p[0]} {p[1]} 2000")
 def wh(): return map(int,sh("wm size").strip().split()[-1].split("x"))
 def rows():
     out=[]
@@ -55,3 +55,17 @@ elif cmd=="dragtop":
     print("after drag:", [r[1] for r in rows()])
 elif cmd=="confirm": tap(find(desc="Confirm")); time.sleep(3); print("confirmed")
 elif cmd=="tap": tap(find(text=sys.argv[2])); print("tapped", sys.argv[2])
+if cmd=="longtext":
+    longpress(find(text=sys.argv[2])); print("longpressed", sys.argv[2])
+elif cmd=="badge":   # open All Apps at an app and tap its tag badge chip
+    p=open_all_apps_item(sys.argv[2]); longpress(p); tap(find(text=sys.argv[3])); time.sleep(3); print("rows:", [r[1] for r in rows()])
+elif cmd=="key":
+    sh("input keyevent "+sys.argv[2])
+elif cmd=="tapdesc": tap(find(desc=sys.argv[2])); print("tapped desc", sys.argv[2])
+elif cmd=="popup":   # swipe right on a home row, list texts, screenshot to argv[3], back
+    w,h=wh(); p=find(text=sys.argv[2]); b=p[2]
+    before=set(r[1] for r in rows())
+    sh(f"input swipe {b[0]} {p[1]} {b[0]+w//2} {p[1]} 300"); time.sleep(5)
+    print("popup:", [r[1] for r in rows()])
+    sh(f"screencap -p /sdcard/popup.png"); subprocess.run(["adb","pull","/sdcard/popup.png",sys.argv[3]],capture_output=True)
+    sh("input keyevent 4"); time.sleep(2)

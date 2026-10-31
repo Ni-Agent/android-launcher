@@ -1,0 +1,1 @@
+adb shell "sqlite3 /data/data/com.ni.launcher.dev/databases/launcher.db \"select 'tag', id, name from tags order by id; select 'item', tagId, itemOrder, type, packageName, shortcutId, targetTagId, labelOverride from tag_items order by tagId, itemOrder;\""

@@ -1,0 +1,6 @@
+['Chrome']
+1|0|TAG|||
+1|1|APP|dev.ni.pinhelper||
+2|0|SHORTCUT|dev.ni.pinhelper|r29|Saved R29
+after reinstall:
+['PinHelper', 'Chrome']

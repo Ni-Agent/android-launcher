@@ -1,0 +1,12 @@
+tag|1|Favorites
+tag|3|Settings Tag
+tag|4|Chrome Tag
+item|1|0|TAG|||3|
+item|1|1|TAG|||4|
+item|3|0|APP|com.android.settings|||
+item|3|1|SHORTCUT|com.android.settings|manifest-shortcut-wifi||Wi‑Fi
+item|3|2|SHORTCUT|com.android.settings|manifest-shortcut-data-usage||Data usage
+item|3|3|SHORTCUT|com.android.settings|manifest-shortcut-battery||Battery
+item|4|0|APP|com.android.chrome|||
+item|4|1|SHORTCUT|com.android.chrome|new-tab-shortcut||New tab
+item|4|2|SHORTCUT|com.android.chrome|dynamic-new-incognito-tab-shortcut||Incognito Tab

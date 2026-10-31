@@ -1,0 +1,6 @@
+tag|1|Favorites
+tag|4|Renamed29
+item|1|0|TAG|||4|
+item|4|0|APP|com.android.chrome|||
+item|4|1|SHORTCUT|com.android.chrome|new-tab-shortcut||New tab
+item|4|2|SHORTCUT|com.android.chrome|dynamic-new-incognito-tab-shortcut||Incognito Tab
