@@ -1,0 +1,44 @@
+INSTRUMENTATION_STATUS: class=com.ni.launcher.e2e.LauncherE2ETest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=1
+INSTRUMENTATION_STATUS: stream=
+com.ni.launcher.e2e.LauncherE2ETest:
+INSTRUMENTATION_STATUS: test=manageTagBeforeShortcutsLoadKeepsSavedShortcuts
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.ni.launcher.e2e.LauncherE2ETest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=1
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: Saved children after early Manage (early view was [Add items…, Settings]) expected:<[Add items…, Battery, Data usage, Wi‑Fi, Settings]> but was:<[Add items…, Settings]>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at com.ni.launcher.e2e.LauncherE2ETest.manageTagBeforeShortcutsLoadKeepsSavedShortcuts(LauncherE2ETest.kt:134)
+
+INSTRUMENTATION_STATUS: stream=
+Error in manageTagBeforeShortcutsLoadKeepsSavedShortcuts(com.ni.launcher.e2e.LauncherE2ETest):
+java.lang.AssertionError: Saved children after early Manage (early view was [Add items…, Settings]) expected:<[Add items…, Battery, Data usage, Wi‑Fi, Settings]> but was:<[Add items…, Settings]>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at com.ni.launcher.e2e.LauncherE2ETest.manageTagBeforeShortcutsLoadKeepsSavedShortcuts(LauncherE2ETest.kt:134)
+
+INSTRUMENTATION_STATUS: test=manageTagBeforeShortcutsLoadKeepsSavedShortcuts
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_RESULT: stream=
+
+Time: 206.208
+There was 1 failure:
+1) manageTagBeforeShortcutsLoadKeepsSavedShortcuts(com.ni.launcher.e2e.LauncherE2ETest)
+java.lang.AssertionError: Saved children after early Manage (early view was [Add items…, Settings]) expected:<[Add items…, Battery, Data usage, Wi‑Fi, Settings]> but was:<[Add items…, Settings]>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at com.ni.launcher.e2e.LauncherE2ETest.manageTagBeforeShortcutsLoadKeepsSavedShortcuts(LauncherE2ETest.kt:134)
+
+FAILURES!!!
+Tests run: 1,  Failures: 1
+
+
+INSTRUMENTATION_CODE: -1

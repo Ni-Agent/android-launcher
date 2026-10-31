@@ -1,0 +1,65 @@
+diff --git a/app/src/main/java/com/ni/launcher/data/RoomGraphPersister.kt b/app/src/main/java/com/ni/launcher/data/RoomGraphPersister.kt
+index 5fe10e8..ad75de3 100644
+--- a/app/src/main/java/com/ni/launcher/data/RoomGraphPersister.kt
++++ b/app/src/main/java/com/ni/launcher/data/RoomGraphPersister.kt
+@@ -97,7 +97,11 @@ class RoomGraphPersister(
+      */
+     override suspend fun flush(version: Long) {
+         val target = synchronized(lock) { minOf(version, lastMarkedVersion) }
+-        if (persisted.value >= target) return
++        if (persisted.value >= target) {
++            Log.i(LOG_TAG, "TEST-ONLY flush(v$version) target=v$target -> SUCCESS immediately (watermark v${persisted.value})")
++            return
++        }
++        Log.i(LOG_TAG, "TEST-ONLY flush(v$version) target=v$target waiting")
+         val seen = failure.value
+         urgent = true
+         wake.trySend(Unit)
+@@ -105,7 +109,11 @@ class RoomGraphPersister(
+         // "pending, no failure yet" keeps waiting.
+         val (p, f) = combine(persisted, failure) { p, f -> p to f }
+             .first { (p, f) -> p >= target || (f != null && f !== seen && f.version >= target) }
+-        if (p >= target) return
++        if (p >= target) {
++            Log.i(LOG_TAG, "TEST-ONLY flush(v$version) target=v$target -> SUCCESS (watermark v$p)")
++            return
++        }
++        Log.i(LOG_TAG, "TEST-ONLY flush(v$version) target=v$target -> FAILURE, watermark stays v${persisted.value}")
+         throw GraphPersistException("graph changes up to v$target were not saved", f!!.cause)
+     }
+ 
+@@ -158,12 +166,26 @@ class RoomGraphPersister(
+         }
+     }
+ 
++    // TEST-ONLY fault injection: `adb shell setprop debug.ni.failwrites 1`
++    private fun prop(name: String): Boolean = try {
++        Class.forName("android.os.SystemProperties").getMethod("get", String::class.java)
++            .invoke(null, name) == "1"
++    } catch (_: Exception) { false }
++    private fun failWrites() = prop("debug.ni.failwrites")
++
+     private fun markPersisted(version: Long) {
++        Log.i(LOG_TAG, "TEST-ONLY markPersisted(v$version) watermark ${persisted.value} -> ${maxOf(version, persisted.value)}")
+         if (version > persisted.value) persisted.value = version
+     }
+ 
+     /** Order: delete removed tags (DB cascade = reducer's Delete), upsert tag rows, replace items. */
+     private suspend fun writeBatch(b: Batch) {
++        if (failWrites()) throw SQLiteConstraintException("TEST-ONLY injected writeBatch failure v${b.version}")
++        if (prop("debug.ni.holdwrites")) {
++            Log.i(LOG_TAG, "TEST-ONLY holding transaction for v${b.version} 45 s")
++            delay(45_000)
++            Log.i(LOG_TAG, "TEST-ONLY releasing transaction for v${b.version}")
++        }
+         if (b.removed.isNotEmpty()) tagDao.deleteByIds(b.removed.toList())
+         val changed = b.changed.mapNotNull { b.user.tags[it] }
+         if (changed.isEmpty()) return
+@@ -183,6 +205,7 @@ class RoomGraphPersister(
+ 
+     /** Make Room equal to [user]: drop unknown tags, upsert all, rewrite all items. */
+     private suspend fun writeFull(user: UserData) {
++        if (failWrites()) throw SQLiteConstraintException("TEST-ONLY injected writeFull failure")
+         val stale = tagDao.getAllIds().filter { it !in user.tags }
+         if (stale.isNotEmpty()) tagDao.deleteByIds(stale)
+         tagDao.upsertAll(user.tags.values.map { it.toEntity() })

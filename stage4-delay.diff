@@ -1,0 +1,12 @@
+diff --git a/app/src/main/java/com/ni/launcher/system/SystemSource.kt b/app/src/main/java/com/ni/launcher/system/SystemSource.kt
+--- a/app/src/main/java/com/ni/launcher/system/SystemSource.kt
++++ b/app/src/main/java/com/ni/launcher/system/SystemSource.kt
+@@ -209,6 +209,8 @@ class SystemSource(
+             }
+ 
+             // 4. shortcuts without decoding
++            android.util.Log.w("NiE2EHoldShortcuts", "holding shortcut discovery for 30000 ms (TEST-ONLY patch on old head)")
++            delay(30_000) // TEST-ONLY (not committed): widen the apps-before-shortcuts window
+             var infos: List<ShortcutInfo> = emptyList()
+             stage(4, "shortcuts", t0) { cur ->
+                 infos = queryShortcuts(null) ?: return@stage cur

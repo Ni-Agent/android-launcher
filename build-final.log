@@ -1,0 +1,9 @@
+warning: The following options were not recognized by any processor: '[room.schemaLocation, kapt.kotlin.generated]'
+warning: The following options were not recognized by any processor: '[room.schemaLocation, kapt.kotlin.generated]'
+warning: The following options were not recognized by any processor: '[room.schemaLocation, kapt.kotlin.generated]'
+warning: The following options were not recognized by any processor: '[room.schemaLocation, kapt.kotlin.generated]'
+
+real	1m6.751s
+user	0m1.428s
+sys	0m0.180s
+EXIT 0

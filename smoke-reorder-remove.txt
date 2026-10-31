@@ -1,0 +1,7 @@
+created: ['Add items…', 'Battery', 'Data usage', 'Wi‑Fi', 'Settings']
+after drag: ['Add items…', 'Wi‑Fi', 'Battery', 'Data usage', 'Settings']
+after remove: ['Add items…', 'Wi‑Fi', 'Data usage', 'Settings']
+confirmed
+['Settings']
+manage: ['Add items…', 'Wi‑Fi', 'Data usage', 'Settings']
+confirmed

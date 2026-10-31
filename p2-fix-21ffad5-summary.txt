@@ -1,0 +1,29 @@
+### A: held transaction
+added Settings
+Warning: Activity not started, its current task has been brought to the front
+### B: batch + resync fail
+added Chrome
+Warning: Activity not started, its current task has been brought to the front
+### C: writes recover, flush again
+Warning: Activity not started, its current task has been brought to the front
+10-31 08:35:33.215 I/RoomGraphPersister(10243): TEST-ONLY holding transaction for v6 45 s
+10-31 08:35:43.438 I/RoomGraphPersister(10243): TEST-ONLY flush(v6) target=v6 waiting
+10-31 08:36:18.218 I/RoomGraphPersister(10243): TEST-ONLY releasing transaction for v6
+10-31 08:36:18.324 I/RoomGraphPersister(10243): TEST-ONLY markPersisted(v6) watermark 0 -> 6
+10-31 08:36:18.347 I/RoomGraphPersister(10243): TEST-ONLY flush(v6) target=v6 -> SUCCESS (watermark v6)
+10-31 08:37:25.484 E/RoomGraphPersister(10243): android.database.sqlite.SQLiteConstraintException: TEST-ONLY injected writeBatch failure v7
+10-31 08:37:25.593 E/RoomGraphPersister(10243): graph/DB invariant broken; batch v7 kept dirty, not persisted
+10-31 08:37:25.593 E/RoomGraphPersister(10243): android.database.sqlite.SQLiteConstraintException: TEST-ONLY injected writeFull failure
+10-31 08:37:41.485 I/RoomGraphPersister(10243): TEST-ONLY flush(v7) target=v7 waiting
+10-31 08:37:41.806 E/RoomGraphPersister(10243): android.database.sqlite.SQLiteConstraintException: TEST-ONLY injected writeBatch failure v7
+10-31 08:37:42.031 E/RoomGraphPersister(10243): graph/DB invariant broken; batch v7 kept dirty, not persisted
+10-31 08:37:42.031 E/RoomGraphPersister(10243): android.database.sqlite.SQLiteConstraintException: TEST-ONLY injected writeFull failure
+10-31 08:37:42.518 I/RoomGraphPersister(10243): TEST-ONLY flush(v7) target=v7 -> FAILURE, watermark stays v6
+10-31 08:37:42.570 E/NiLauncher(10243): graph flush failed
+10-31 08:37:42.570 E/NiLauncher(10243): com.ni.launcher.data.GraphPersistException: graph changes up to v7 were not saved
+10-31 08:37:42.570 E/NiLauncher(10243): Caused by: android.database.sqlite.SQLiteConstraintException: TEST-ONLY injected writeFull failure
+10-31 08:38:13.613 I/RoomGraphPersister(10243): TEST-ONLY flush(v7) target=v7 waiting
+10-31 08:38:14.102 I/RoomGraphPersister(10243): TEST-ONLY markPersisted(v7) watermark 6 -> 7
+10-31 08:38:14.159 I/RoomGraphPersister(10243): TEST-ONLY flush(v7) target=v7 -> SUCCESS (watermark v7)
+### D: force-stop + cold start, home rows:
+['Chrome', 'Settings']
