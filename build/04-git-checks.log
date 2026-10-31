@@ -1,0 +1,26 @@
+$ git rev-parse HEAD
+9e05d314323da7ea93cc96afa92ef7e1216feb36
+exit=0
+$ git status --porcelain
+(end of output) exit=0
+$ git status --ignored --porcelain
+!! .gradle/
+!! app/build/
+!! e2e/build/
+(end of output) exit=0
+$ git ls-files e2e/build | wc -l
+0
+exit=0
+$ ls -la e2e/build/outputs/apk/debug/
+total 4752
+drwxr-xr-x 2 box box    4096 Oct 31 06:28 .
+drwxr-xr-x 3 box box    4096 Oct 31 06:28 ..
+-rw-r--r-- 1 box box 4852475 Oct 31 06:28 e2e-debug.apk
+-rw-r--r-- 1 box box     398 Oct 31 06:28 output-metadata.json
+exit=0
+$ sha256sum e2e/build/outputs/apk/debug/*.apk
+e233bdef2f9fdc35bce0c959d2a103bea29384b5ed495206a5eea1904f2335c7  e2e/build/outputs/apk/debug/e2e-debug.apk
+exit=0
+$ git check-ignore -v e2e/build/outputs/apk/debug/*.apk
+e2e/.gitignore:1:/build	e2e/build/outputs/apk/debug/e2e-debug.apk
+exit=0

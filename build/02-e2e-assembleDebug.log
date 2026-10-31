@@ -1,0 +1,45 @@
+$ export ANDROID_HOME=~/Android/Sdk; ./gradlew :e2e:assembleDebug -I /tmp/ni-sdkext.init.gradle -Dorg.gradle.jvmargs=-Xmx2g --no-daemon
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.13/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :e2e:preBuild UP-TO-DATE
+> Task :e2e:preDebugBuild UP-TO-DATE
+> Task :e2e:checkTestedAppObfuscationDebug UP-TO-DATE
+> Task :e2e:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :e2e:checkDebugAarMetadata UP-TO-DATE
+> Task :e2e:processDebugNavigationResources UP-TO-DATE
+> Task :e2e:compileDebugNavigationResources UP-TO-DATE
+> Task :e2e:generateDebugResValues UP-TO-DATE
+> Task :e2e:mapDebugSourceSetPaths UP-TO-DATE
+> Task :e2e:generateDebugResources UP-TO-DATE
+> Task :e2e:mergeDebugResources UP-TO-DATE
+> Task :e2e:processDebugManifest UP-TO-DATE
+> Task :e2e:processDebugResources UP-TO-DATE
+> Task :e2e:compileDebugKotlin UP-TO-DATE
+> Task :e2e:javaPreCompileDebug UP-TO-DATE
+> Task :e2e:compileDebugJavaWithJavac NO-SOURCE
+> Task :e2e:mergeDebugShaders UP-TO-DATE
+> Task :e2e:compileDebugShaders NO-SOURCE
+> Task :e2e:generateDebugAssets UP-TO-DATE
+> Task :e2e:mergeDebugAssets UP-TO-DATE
+> Task :e2e:compressDebugAssets UP-TO-DATE
+> Task :e2e:desugarDebugFileDependencies UP-TO-DATE
+> Task :e2e:dexBuilderDebug UP-TO-DATE
+> Task :e2e:mergeDebugGlobalSynthetics UP-TO-DATE
+> Task :e2e:processDebugJavaRes UP-TO-DATE
+> Task :e2e:mergeDebugJavaResource UP-TO-DATE
+> Task :e2e:checkDebugDuplicateClasses UP-TO-DATE
+> Task :e2e:mergeExtDexDebug UP-TO-DATE
+> Task :e2e:mergeLibDexDebug UP-TO-DATE
+> Task :e2e:mergeProjectDexDebug UP-TO-DATE
+> Task :e2e:mergeDebugJniLibFolders UP-TO-DATE
+> Task :e2e:mergeDebugNativeLibs NO-SOURCE
+> Task :e2e:stripDebugDebugSymbols NO-SOURCE
+> Task :e2e:validateSigningDebug UP-TO-DATE
+> Task :e2e:writeDebugSigningConfigVersions UP-TO-DATE
+> Task :e2e:packageDebug UP-TO-DATE
+> Task :e2e:createDebugApkListingFileRedirect UP-TO-DATE
+> Task :e2e:assembleDebug UP-TO-DATE
+
+BUILD SUCCESSFUL in 11s
+29 actionable tasks: 29 up-to-date
+exit=0

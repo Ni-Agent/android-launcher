@@ -1,0 +1,21 @@
+$ git rev-parse HEAD
+9e05d314323da7ea93cc96afa92ef7e1216feb36
+$ date -u
+Sat Oct 31 05:26:19 UTC 2026
+$ ./gradlew clean -I /tmp/ni-sdkext.init.gradle -Dorg.gradle.jvmargs=-Xmx2g --no-daemon
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.13/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :app:clean
+> Task :e2e:clean
+
+BUILD SUCCESSFUL in 7s
+2 actionable tasks: 2 executed
+exit=0
+$ rm -rf e2e/build app/build
+exit=0
+$ ls -d e2e/build app/build
+ls: cannot access 'e2e/build': No such file or directory
+ls: cannot access 'app/build': No such file or directory
+exit=2 (non-zero expected: dirs absent)
+$ git status --porcelain
+(end; exit=0)

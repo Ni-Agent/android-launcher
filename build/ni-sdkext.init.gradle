@@ -1,0 +1,13 @@
+// Out-of-repo overrides for building on this box / x86 emulator:
+//  - android-36-ext1 is not published; compile against installed android-36-ext18.
+//  - add x86 to abiFilters so the APK installs on the x86 (software-emulated) AVD.
+allprojects {
+    plugins.withId('com.android.application') {
+        androidComponents {
+            finalizeDsl { ext ->
+                ext.compileSdkExtension = 18
+                ext.defaultConfig.ndk.abiFilters.add('x86')
+            }
+        }
+    }
+}

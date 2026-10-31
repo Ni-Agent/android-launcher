@@ -1,0 +1,47 @@
+$ rm -rf e2e/build
+exit=0
+$ export ANDROID_HOME=~/Android/Sdk; ./gradlew :e2e:assembleDebug --rerun-tasks -I /tmp/ni-sdkext.init.gradle -Dorg.gradle.jvmargs=-Xmx2g --no-daemon
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.13/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :e2e:preBuild UP-TO-DATE
+> Task :e2e:preDebugBuild UP-TO-DATE
+> Task :e2e:checkTestedAppObfuscationDebug
+> Task :e2e:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :e2e:checkDebugAarMetadata
+> Task :e2e:processDebugNavigationResources
+> Task :e2e:generateDebugResValues
+> Task :e2e:compileDebugNavigationResources
+> Task :e2e:mapDebugSourceSetPaths
+> Task :e2e:generateDebugResources
+> Task :e2e:processDebugManifest
+> Task :e2e:javaPreCompileDebug
+> Task :e2e:mergeDebugShaders
+> Task :e2e:compileDebugShaders NO-SOURCE
+> Task :e2e:generateDebugAssets UP-TO-DATE
+> Task :e2e:mergeDebugResources
+> Task :e2e:mergeDebugAssets
+> Task :e2e:compressDebugAssets
+> Task :e2e:desugarDebugFileDependencies
+> Task :e2e:mergeDebugJniLibFolders
+> Task :e2e:checkDebugDuplicateClasses
+> Task :e2e:mergeDebugNativeLibs NO-SOURCE
+> Task :e2e:stripDebugDebugSymbols NO-SOURCE
+> Task :e2e:mergeLibDexDebug
+> Task :e2e:validateSigningDebug
+> Task :e2e:writeDebugSigningConfigVersions
+> Task :e2e:processDebugResources
+> Task :e2e:mergeExtDexDebug
+> Task :e2e:compileDebugKotlin
+> Task :e2e:compileDebugJavaWithJavac NO-SOURCE
+> Task :e2e:dexBuilderDebug
+> Task :e2e:mergeDebugGlobalSynthetics
+> Task :e2e:processDebugJavaRes
+> Task :e2e:mergeProjectDexDebug
+> Task :e2e:mergeDebugJavaResource
+> Task :e2e:packageDebug
+> Task :e2e:createDebugApkListingFileRedirect
+> Task :e2e:assembleDebug
+
+BUILD SUCCESSFUL in 14s
+29 actionable tasks: 29 executed
+exit=0
